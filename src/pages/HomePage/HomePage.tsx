@@ -1,3 +1,9 @@
+import CardsContainer from "@/modules/CardsContainer/CardsContainer";
+
 export const HomePage = () => {
-  return <div>webpack-starter - home page</div>;
+  return (
+    <div>
+      <CardsContainer />
+    </div>
+  );
 };

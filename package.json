@@ -33,6 +33,7 @@
   "author": "Creator11",
   "license": "MIT",
   "devDependencies": {
+    "@babel/standalone": "^7.24.6",
     "@eslint/js": "^9.12.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@svgr/webpack": "^8.1.0",
@@ -54,6 +55,7 @@
     "@typescript-eslint/eslint-plugin": "^8.13.0",
     "@typescript-eslint/parser": "^8.13.0",
     "autoprefixer": "^10.4.20",
+    "babel-standalone": "^6.26.0",
     "css-loader": "^6.10.0",
     "eslint": "^9.12.0",
     "eslint-plugin-prettier": "^5.2.1",
@@ -86,11 +88,12 @@
     "webpack-bundle-analyzer": "^4.10.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2",
-    "webpackbar": "^6.0.1",
-    "@babel/standalone": "^7.24.6",
-    "babel-standalone": "^6.26.0"
+    "webpackbar": "^6.0.1"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.1.10",
     "axios": "^1.7.3",
     "classnames": "^2.5.1",
     "detect-port": "^1.6.1",

@@ -21,7 +21,10 @@
     "./src/**/*.ts",
     "./src/**/*.tsx",
     "config/globalts/global.d.ts",
-    "config/babel/babel-standalone.ts"
+    "config/babel/babel-standalone.ts",
+    "src/components/Card/Card.jsx",
+    "src/components/Card/Card.jsx",
+    "src/components/Card/Card.jsx"
   ],
   "exclude": ["node_modules"],
   "ts-node": {
