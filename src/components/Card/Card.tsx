@@ -1,35 +1,39 @@
-import React from "react";
-import { Typography, CardActions, Button, Box } from "@mui/material";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import { FC } from "preact/compat";
+import s from "./Card.module.scss";
 
-interface ICard {
-  title: string;
-  desc: string;
+interface CardProps {
+    image: string;
+    tags: string[];
+    title: string;
+    description: string;
+    onBookmarkClick?: () => void;
+    isBookmarked?: boolean;
 }
 
-const CardBox: React.FC<ICard> = ({ title, desc }) => {
-  const card = (
-    <React.Fragment>
-      <CardContent>
-        <Typography gutterBottom sx={{ color: "text.secondary", fontSize: 14 }}>
-          {title}
-        </Typography>
+const Card: FC<CardProps> = ({ image, tags, title, description, onBookmarkClick, isBookmarked }) => {
+    return (
+        <div className={s.card}>
 
-        <Typography variant="body2">{desc}</Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">link</Button>
-      </CardActions>
-    </React.Fragment>
-  );
-  return (
-    <div>
-      <Card sx={{ maxWidth: 275 }} variant="outlined">
-        {card}
-      </Card>
-    </div>
-  );
+            <div className={s.image} style={{ backgroundImage: `url(${image})` }}></div>
+
+            <div className={s.tags}>
+                {tags.map((tag) => (
+                    <span key={tag} className={s.tag}>
+            {tag}
+          </span>
+                ))}
+            </div>
+
+            <div className={s.info}>
+                <h3 className={s.title}>{title}</h3>
+                <p className={s.description}>{description}</p>
+            </div>
+
+            <button className={s.bookmark} onClick={onBookmarkClick}>
+                {isBookmarked ? "★" : "☆"}
+            </button>
+        </div>
+    );
 };
 
-export default CardBox;
+export default Card;

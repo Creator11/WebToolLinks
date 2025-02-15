@@ -1,35 +1,7 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "CommonJS",
-    "target": "esnext",
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    // "sourceMap": true,
-    "incremental": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "skipLibCheck": true
-  },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "config/globalts/global.d.ts",
-    "config/babel/babel-standalone.ts",
-    "src/components/Card/Card.jsx",
-    "src/components/Card/Card.jsx",
-    "src/components/Card/Card.jsx"
-  ],
-  "exclude": ["node_modules"],
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  }
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }

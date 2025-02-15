@@ -1,0 +1,23 @@
+.filterContainer {
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  color: #222;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 6px rgba(25, 118, 210, 0.3);
+    outline: none;
+  }
+}

@@ -1,13 +1,12 @@
-import s from "@/assets/styles/App.module.scss";
-import { Outlet } from "react-router";
-import "@/assets/styles/index.scss";
 
-export const App = () => {
-  return (
-    <div className={s.App}>
-      <Outlet />
-    </div>
-  );
-};
+import './assets/style/app.css'
+import Main from "./pages/main/Main.tsx";
 
-export default App;
+export function App() {
+    return (
+    <>
+      <h1>devBookmarks</h1>
+      <Main/>
+    </>
+  )
+}

@@ -1,0 +1,93 @@
+.card {
+ display: flex;
+ flex-direction: column;
+ background: #fff;
+ border-radius: 12px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ overflow: hidden;
+ transition: transform 0.2s ease-in-out;
+ max-width: 400px;
+ width: 100%;
+ position: relative;
+ cursor: pointer;
+
+ &:hover {
+  transform: translateY(-5px);
+ }
+}
+
+.image {
+ width: 100%;
+ height: 180px;
+ background-size: cover;
+ background-position: center;
+}
+
+.tags {
+ display: flex;
+ gap: 6px;
+ padding: 8px 12px;
+}
+
+.tag {
+ background: #e0e0e0;
+ color: #333;
+ font-size: 12px;
+ padding: 4px 8px;
+ border-radius: 6px;
+}
+
+.info {
+ padding: 12px;
+}
+
+.title {
+ font-size: 18px;
+ font-weight: bold;
+ margin-bottom: 6px;
+ color: #222;
+}
+
+.description {
+ font-size: 14px;
+ color: #666;
+}
+
+.bookmark {
+ position: absolute;
+ top: 10px;
+ right: 10px;
+ background: none;
+ border: none;
+ font-size: 22px;
+ cursor: pointer;
+ transition: color 0.2s;
+ color: #aaa;
+
+ &:hover {
+  color: #ff9800;
+ }
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+ .card {
+  max-width: 100%;
+ }
+
+ .image {
+  height: 140px;
+ }
+
+ .title {
+  font-size: 16px;
+ }
+
+ .description {
+  font-size: 12px;
+ }
+
+ .bookmark {
+  font-size: 20px;
+ }
+}
