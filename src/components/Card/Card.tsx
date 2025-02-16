@@ -13,19 +13,16 @@ interface CardProps {
 const Card: FC<CardProps> = ({ image, tags, title, description, onBookmarkClick, isBookmarked }) => {
     return (
         <div className={s.card}>
-
             <div className={s.image} style={{ backgroundImage: `url(${image})` }}></div>
-
-            <div className={s.tags}>
-                {tags.map((tag) => (
-                    <span key={tag} className={s.tag}>
-            {tag}
-          </span>
-                ))}
-            </div>
-
             <div className={s.info}>
                 <h3 className={s.title}>{title}</h3>
+                <div className={s.tags}>
+                    {tags.map((tag) => (
+                        <span key={tag} className={s.tag}>
+            {tag}
+          </span>
+                    ))}
+                </div>
                 <p className={s.description}>{description}</p>
             </div>
 

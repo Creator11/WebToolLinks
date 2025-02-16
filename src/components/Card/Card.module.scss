@@ -1,13 +1,16 @@
 .card {
  display: flex;
+ box-sizing: border-box;
  flex-direction: column;
  background: #fff;
  border-radius: 12px;
  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
  overflow: hidden;
  transition: transform 0.2s ease-in-out;
- max-width: 400px;
+ max-width: 390px;
  width: 100%;
+ max-height: 420px;
+ height: 100%;
  position: relative;
  cursor: pointer;
 
@@ -26,7 +29,7 @@
 .tags {
  display: flex;
  gap: 6px;
- padding: 8px 12px;
+ padding: 8px 0px;
 }
 
 .tag {
@@ -44,12 +47,13 @@
 .title {
  font-size: 18px;
  font-weight: bold;
- margin-bottom: 6px;
+ margin-top: 6px;
  color: #222;
 }
 
 .description {
  font-size: 14px;
+ text-align: left;
  color: #666;
 }
 
