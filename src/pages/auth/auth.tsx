@@ -1,4 +1,4 @@
-import s from './auth.module.css';
+import s from './auth.module.scss';
 
 const Auth = () => {
     return (

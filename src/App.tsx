@@ -1,15 +1,17 @@
 
 import './assets/style/app.css'
-import Main from "./pages/main/Main.tsx";
 import Navbar from "./modules/Navbar/Navbar.tsx";
-import {Sidebar} from "lucide-react";
+import {Router} from "wouter";
+import Routes from "./router/router.tsx";
 
 export function App() {
     return (
     <>
         <Navbar/>
-        <Sidebar/>
-      <Main/>
+        {/*<Sidebar/>*/}
+        <Router>
+            <Routes />
+        </Router>
     </>
   )
 }
