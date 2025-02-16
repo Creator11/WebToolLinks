@@ -1,0 +1,52 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  //background-color: #f8f9fa;
+  //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #white;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+
+.githubBadge {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.githubBadge:hover {
+  background-color: #24292e;
+}
+
+.githubIcon {
+  margin-right: 5px;
+}

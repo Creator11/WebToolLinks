@@ -2,7 +2,7 @@ import s from './DashboardCard.module.scss';
 import Card from "../../components/Card/Card.tsx";
 import { CARDS } from "../../STATIC_DATA/static.ts";
 import Input from "../../components/Input/Input.tsx";
-import Filter from "../../components/Filter/Filter.tsx";
+import Filter from "../../components/ui/Filter/Filter.tsx";
 import { useState} from "preact/hooks";
 import Pagination from "../../components/Pagination/Pagination.tsx";
 
@@ -35,13 +35,13 @@ const DashboardCard = () => {
 
     return (
         <div className={s.dashboardCard}>
-            <h1>{searchQuery}</h1>
+
             <div className={s.search}>
                 <Input value={searchQuery} onChange={setSearchQuery} />
 
             </div>
             <div className={s.filters}>
-                <Filter /> <Filter /> <Filter />
+                <Filter /> <Filter />
             </div>
             <div className={s.cards}>
                 {
