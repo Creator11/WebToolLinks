@@ -3,7 +3,8 @@ import Card from "../../components/Card/Card.tsx";
 import Input from "../../components/Input/Input.tsx";
 import Filter from "../../components/ui/Filter/Filter.tsx";
 import Pagination from "../../components/Pagination/Pagination.tsx";
-import { useState, useEffect } from "preact/hooks";
+import { useState } from "preact/hooks";
+import { useQuery } from "@tanstack/react-query";
 import { getCards } from "../../services/cards/cards.ts";
 
 interface ICard {
@@ -18,37 +19,25 @@ interface ICard {
 const ITEMS_PER_PAGE = 6;
 
 const DashboardCard = () => {
-    const [cards, setCards] = useState<ICard[]>([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        const fetchCards = async () => {
-            try {
-                const fetchedCards = await getCards();
-                console.log("Fetched cards:", fetchedCards);
-                setCards(fetchedCards);
-            } catch (err) {
-                console.error("Error fetching cards:", err);
-                setError("Failed to load cards");
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchCards();
-    }, []);
 
-    const filteredCards = cards.filter((card) =>
+    const { data: cards = [], isLoading, error } = useQuery({
+        queryKey: ["cards"],
+        queryFn: getCards,
+        staleTime: 1000 * 60 * 5,
+    });
+
+    if (isLoading) return <p>Loading...</p>;
+    if (error) return <p>Failed to load cards</p>;
+
+    const filteredCards = cards.filter((card: ICard) =>
         card.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const paginatedCards = filteredCards.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>{error}</p>;
 
     return (
         <div className={s.dashboardCard}>
