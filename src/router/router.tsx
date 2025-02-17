@@ -6,8 +6,8 @@ import Auth from "../pages/auth/auth.tsx";
 const Routes = () => {
     return (
         <Switch>
-            <Route path="/WebToolLinks/" component={Main} />
-            <Route path="/WebToolLinks/auth" component={Auth} />
+            <Route path="/" component={Main} />
+            <Route path="/auth" component={Auth} />
             <Route component={NotFound} />
         </Switch>
     );
