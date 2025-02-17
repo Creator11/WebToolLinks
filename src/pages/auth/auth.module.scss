@@ -1,0 +1,152 @@
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.backButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: #0077ff;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.toggleButton:hover {
+  color: #005bb5;
+}
+
+.formWrapper {
+  background-color: #1f1f1f; /* Темный фон для формы */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+p {
+  color: #b0b0b0;
+  font-size: 14px;
+}
+
+// Стили для формы
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+// Стили для групп инпутов
+.inputGroup {
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 14px;
+  color: #b0b0b0;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #2a2a2a;
+  color: white;
+}
+
+input:focus {
+  border-color: #0077ff;
+  outline: none;
+  background-color: #333;
+}
+
+.submitButton {
+  padding: 12px;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #005bb5;
+}
+
+.homeLink {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 4px;
+}
+.toggleLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.toggleLink span {
+  font-size: 14px;
+  color: #b0b0b0;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: #0077ff;
+  font-size: 14px;
+  cursor: pointer;
+
+}
+
+.toggleButton:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 480px) {
+  .formWrapper {
+    padding: 16px;
+  }
+
+  .formHeader h2 {
+    font-size: 22px;
+  }
+
+  .submitButton {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .inputGroup input {
+    font-size: 14px;
+  }
+}

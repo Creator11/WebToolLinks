@@ -1,22 +1,17 @@
 
 import { Github } from "lucide-react";
 import styles from "./Navbar.module.scss";
-import Button from "../../components/ui/Button/Button.tsx";
 import LangButton from "../../components/LangButton/LangButton.tsx";
 import ThemeToggle from "../../components/ThemeToggle/ThemeToggle.tsx";
+import {Link} from "wouter";
 
 
 
 
 const Navbar = () => {
 
-
-
-
-
     return (
         <nav className={styles.navbar}>
-
             <div className={styles.logoContainer}>
                 <span className={styles.title}>WebToolLinks</span>
             </div>
@@ -24,7 +19,7 @@ const Navbar = () => {
               <ThemeToggle/>
               <LangButton/>
 
-                <Button variant="default">Sign In</Button>
+                <Link to="/auth" >Sign In</Link>
                 <a
                     href="https://github.com/Creator11/WebToolLinks"
                     target="_blank"
