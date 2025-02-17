@@ -12,7 +12,7 @@ export function App() {
         <QueryClientProvider client={queryClient}>
             <Navbar />
             <ReactQueryDevtools initialIsOpen={false} />
-            <Router>
+            <Router base="/WebToolLinks">
                 <Routes />
             </Router>
         </QueryClientProvider>
