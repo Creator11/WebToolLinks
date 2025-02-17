@@ -2,17 +2,18 @@ import { useState } from 'preact/hooks';
 import s from './Filter.module.scss';
 
 const options = [
-    { value: 'alphabet', label: 'По алфавиту' },
-    { value: 'popular', label: 'Сначала популярные' },
-    { value: 'new', label: 'Сначала новые' }
+    { value: 'new', label: 'Сначала новые' },
+    { value: 'old', label: 'Сначала старые' },
 ];
 
-const Filter = () => {
+const Filter = ({ onChange }: { onChange: (value: string) => void }) => {
     const [selected, setSelected] = useState<string>(options[0].value);
 
     const handleChange = (e: Event) => {
         const target = e.target as HTMLSelectElement;
-        setSelected(target.value);
+        const value = target.value;
+        setSelected(value);
+        onChange(value);
     };
 
     return (

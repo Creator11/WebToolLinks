@@ -2,15 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  //background-color: #f8f9fa;
-  //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  //padding: 10px 20px;
+  position: relative;
+  z-index: 10;
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: space-between;
 }
 
 .logo {
@@ -20,18 +21,74 @@
 .title {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #white;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: white;
+  }
 }
-
+.authLink {
+display: flex;
+  align-items: center;
+  width: 60px;
+  padding: 0px 10px;
+}
 .controls {
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    // Скрываем элементы на мобильных устройствах по умолчанию
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    width: 100vw;
+    height: 200px;
+    background-color: #1f1f1f;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    gap: 15px;
+
+    transform: translateY(-300%);
+    transition: transform 0.3s ease-in-out;
+
+  }
+
+  &.showMenu {
+    transform: translateY(0); // Меню появляется плавно
+  }
 }
 
+.menuButton {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  @media (max-width: 768px) {
+    display: block; // Показываем кнопку на мобильных экранах
+  }
+}
 
+.desktopControls {
+  display: flex;
+  gap: 10px;
 
+  @media (max-width: 768px) {
+    display: none; // Скрываем на мобильных экранах
+  }
+}
 
+.githubContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 .githubBadge {
   display: flex;
   align-items: center;
@@ -41,12 +98,28 @@
   border-radius: 5px;
   text-decoration: none;
   transition: background 0.3s;
+  max-width: 80px;
 }
 
 .githubBadge:hover {
   background-color: #24292e;
+
 }
 
 .githubIcon {
   margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .controls.showMenu {
+    transform: translateY(0); // Плавно открывается
+  }
+
+  .desktopControls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    text-align: center;
+  }
 }
