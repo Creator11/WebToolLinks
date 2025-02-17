@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <nav className={s.navbar}>
             <div className={s.logoContainer}>
-                <Link to="/" className={s.title}>WebToolLinks</Link>
+                <Link to="/WebToolLinks/" className={s.title}>WebToolLinks</Link>
             </div>
  
             <button className={s.menuButton} onClick={toggleMenu}>
@@ -26,7 +26,7 @@ const Navbar = () => {
                 <div className={s.desktopControls}>
                     <ThemeToggle />
                     <LangButton />
-                    <Link className={s.authLink} to="/auth">Sign&nbsp;In</Link>
+                    <Link className={s.authLink} to="/WebToolLinks/auth">Sign&nbsp;In</Link>
                     <div className={s.githubContainer}>
                         <a
                             href="https://github.com/Creator11/WebToolLinks"
