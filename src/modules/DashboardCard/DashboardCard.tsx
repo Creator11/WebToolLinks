@@ -1,8 +1,8 @@
 import { useState } from "preact/hooks";
 import s from "./DashboardCard.module.scss";
-import Input from "../../components/Input/Input.tsx";
+import Input from "../../components/ui/Input/Input.tsx";
 import { useQuery } from "@tanstack/react-query";
-import { getCards } from "../../services/cards/cards.ts";
+import { getCards } from "../../services/api/cards.ts";
 import Cards from "../../components/Cards/Cards.tsx";
 
 interface ICard {
@@ -11,7 +11,7 @@ interface ICard {
     tags: string[];
     title: string;
     description: string;
-    created_at: string;  // Используем created_at вместо date
+    created_at: string;
     isBookmarked?: boolean;
 }
 

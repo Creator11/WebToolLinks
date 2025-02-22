@@ -4,8 +4,8 @@ import { supabase } from '../../services/supabase/supabase.ts';
 import { User } from '@supabase/supabase-js';
 import {Bookmark, ChevronDown, LogOut, Settings} from 'lucide-react';
 import s from './Navbar.module.scss';
-import LangButton from '../../components/LangButton/LangButton.tsx';
-import ThemeToggle from '../../components/ThemeToggle/ThemeToggle.tsx';
+import LangButton from '../../components/ui/LangButton/LangButton.tsx';
+import ThemeToggle from '../../components/ui/ThemeToggle/ThemeToggle.tsx';
 
 const Navbar = () => {
     const [user, setUser] = useState<User | null>(null);

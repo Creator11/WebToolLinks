@@ -1,8 +1,8 @@
 import { FC, useState } from "preact/compat";
 import s from "./Card.module.scss";
 import { BookmarkMinus, BookmarkPlus} from "lucide-react";
-import { toggleBookmark } from "../../services/bookmarks/bookmarks.ts";
-import {useUser} from "../../hooks/useCards.tsx";
+import { toggleBookmark } from "../../../services/api/bookmarks.ts";
+import {useUser} from "../../../hooks/useUser.tsx";
 
 interface CardProps {
     id: number;
@@ -19,7 +19,7 @@ const Card: FC<CardProps> = ({ id, image, tags, title, description, isBookmarked
     const [bookmarked, setBookmarked] = useState(isBookmarked);
 
     const handleBookmark = async (e:Event) => {
-        e.preventDefault(); // Останавливаем переход по ссылке
+        e.preventDefault();
         if (user) {
             // @ts-ignore
             await toggleBookmark(user.id, id, bookmarked);

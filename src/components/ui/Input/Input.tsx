@@ -10,11 +10,11 @@ interface InputProps {
 
 
 function debounce(fn: (...args: any[]) => void, delay: number) {
-    let timeoutId: ReturnType<typeof setTimeout>; // Храним ID таймера, чтобы его можно было сбросить
+    let timeoutId: ReturnType<typeof setTimeout>;
 
     return (...args: any[]) => {
-        clearTimeout(timeoutId); // Если пользователь вводит новый символ — сбрасываем предыдущий таймер
-        timeoutId = setTimeout(() => fn(...args), delay); // Запускаем новый таймер с задержкой
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn(...args), delay);
     };
 }
 

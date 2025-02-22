@@ -1,6 +1,6 @@
 import s from "./Cards.module.scss";
-import Card from "../Card/Card.tsx";
-import Pagination from "../Pagination/Pagination.tsx";
+import Card from "./Card/Card.tsx";
+import Pagination from "../ui/Pagination/Pagination.tsx";
 import { useState } from "preact/hooks";
 import Filter from "../ui/Filter/Filter.tsx";
 

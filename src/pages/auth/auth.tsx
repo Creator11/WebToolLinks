@@ -5,13 +5,13 @@ import Button from "../../components/ui/Button/Button.tsx";
 import {supabase} from "../../services/supabase/supabase.ts";
 
 const Auth = () => {
-    const [isSignIn, setIsSignIn] = useState(true);  // Стейт для переключения между входом и регистрацией
-    const toggleForm = () => setIsSignIn(!isSignIn);  // Переключение формы
+    const [isSignIn, setIsSignIn] = useState(true);
+    const toggleForm = () => setIsSignIn(!isSignIn);
     const handleLogin = async () => {
         const { error } = await supabase.auth.signInWithOAuth({
             provider: "github",
             options: {
-                redirectTo: window.location.origin, // Перенаправление после входа
+                redirectTo: window.location.origin,
             },
         });
 

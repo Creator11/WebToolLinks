@@ -1,5 +1,5 @@
 import s from './LangButton.module.scss';
-import Button from "../ui/Button/Button.tsx";
+import Button from "../Button/Button.tsx";
 import {useState} from "preact/hooks";
 
 const LangButton = () => {

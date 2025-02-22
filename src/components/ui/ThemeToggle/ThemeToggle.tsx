@@ -1,6 +1,6 @@
 import s from './ThemeToggle.module.scss';
 import {Moon, Sun} from "lucide-react";
-import Toggle from "../ui/Toggle/Toggle.tsx";
+import Toggle from "../Toggle/Toggle.tsx";
 import {useState} from "preact/hooks";
 
 const ThemeToggle = () => {

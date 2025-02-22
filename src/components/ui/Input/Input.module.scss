@@ -16,7 +16,7 @@
   transition: all 0.2s ease-in-out;
 
   &:focus {
-    border-color: #1976d2; // Синий, как в MUI
+    border-color: #1976d2;
     box-shadow: 0 0 8px rgba(25, 118, 210, 0.3);
   }
 }

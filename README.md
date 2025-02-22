@@ -4,7 +4,7 @@
 A curated collection of useful developer tools with filtering and bookmarking features.
 
 ## 🚀 Live Demo
-[Check it out on GitHub Pages](https://creator11.github.io/webtoollinks/)
+[Check it out on GitHub Pages](https://creator11.github.io/WebToolLinks/)
 
 ## 📌 Features
 - 🔎 **Instant Search & Filters** – Find the best tools quickly.

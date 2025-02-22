@@ -4,7 +4,7 @@ import Inspect from 'vite-plugin-inspect';
 
 // https://vite.dev/config/
 export default defineConfig({
-  // base: '/WebToolLinks/',
+  base: '/WebToolLinks/',
   // @ts-ignore
   plugins: [preact(), Inspect({
     build: true,
