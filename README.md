@@ -38,5 +38,5 @@ npm run deploy
 ```
 
 ## 📄 License
-MIT License © 2025 [Your Name](https://github.com/creator11)
+MIT License © 2025 [creator11](https://github.com/creator11)
 
