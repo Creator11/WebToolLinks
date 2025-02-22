@@ -1,24 +1,25 @@
 import { FC, useState } from "preact/compat";
 import s from "./Card.module.scss";
-import { Bookmark, BookmarkMinus } from "lucide-react";
+import { BookmarkMinus, BookmarkPlus} from "lucide-react";
 import { toggleBookmark } from "../../services/bookmarks/bookmarks.ts";
 import {useUser} from "../../hooks/useCards.tsx";
 
 interface CardProps {
-    id: number; // Добавляем ID карточки
+    id: number;
     image: string;
     tags: string[];
     title: string;
     description: string;
-    link: string;
-    isBookmarked: boolean;
+    link?: string;
+    isBookmarked?: boolean;
 }
 
-const Card: FC<CardProps> = ({ id, image, tags, title, description, isBookmarked, link = "#" }) => {
+const Card: FC<CardProps> = ({ id, image, tags, title, description, isBookmarked = false, link = "#" }) => {
     const { user } = useUser();
     const [bookmarked, setBookmarked] = useState(isBookmarked);
 
-    const handleBookmark = async () => {
+    const handleBookmark = async (e:Event) => {
+        e.preventDefault(); // Останавливаем переход по ссылке
         if (user) {
             // @ts-ignore
             await toggleBookmark(user.id, id, bookmarked);
@@ -40,7 +41,7 @@ const Card: FC<CardProps> = ({ id, image, tags, title, description, isBookmarked
                             className={s.favoriteButton}
                             aria-label="Добавить в избранное"
                         >
-                            {!bookmarked ? <Bookmark size={24} /> : <BookmarkMinus size={24} />}
+                            {!bookmarked ? <BookmarkPlus  size={24} /> : <BookmarkMinus size={24} />}
                         </div>
                     </div>
                     <div className={s.tags}>

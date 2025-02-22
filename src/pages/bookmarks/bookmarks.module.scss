@@ -4,12 +4,3 @@
   align-items: center;
   width: 100%;
 }
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-  min-height: 800px;
-}

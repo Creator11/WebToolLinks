@@ -17,31 +17,21 @@ export const getUserBookmarks = async (userId: string) => {
 };
 
 export const toggleBookmark = async (userId: string, cardId: string, isBookmarked: boolean) => {
+    let error;
+
     if (isBookmarked) {
-        // Удаляем из избранного
-        const { error } = await supabase
-            .from("profile")
-            .update({
-                card_id: supabase
-                    .rpc("array_remove", { arr: "card_id", value: cardId })
-            })
-            .eq("user_id", userId);
-
-        if (error) {
-            console.error("Ошибка при удалении из избранного:", error);
-        }
+        ({ error } = await supabase.rpc("remove_bookmark", {
+            user_id: userId,
+            card: cardId
+        }));
     } else {
-        // Добавляем в избранное
-        const { error } = await supabase
-            .from("profile")
-            .update({
-                card_id: supabase
-                    .rpc("array_append", { arr: "card_id", value: cardId })
-            })
-            .eq("user_id", userId);
+        ({ error } = await supabase.rpc("add_bookmark", {
+            user_id: userId,
+            card: cardId
+        }));
+    }
 
-        if (error) {
-            console.error("Ошибка при добавлении в избранное:", error);
-        }
+    if (error) {
+        console.error("Ошибка при изменении избранного:", error);
     }
 };

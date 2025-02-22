@@ -1,0 +1,60 @@
+.cardsPage {
+   width: 100%;
+  margin-top: 118px;
+}
+.cardsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  min-height: 800px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 800px;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: start;
+  margin-bottom: 20px;
+}
+
+
+.empty {
+  text-align: center;
+  color: #666;
+  width: 100%;
+  max-width: 400px;
+}
+
+.empty h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.empty p {
+  font-size: 16px;
+  color: #888;
+}
+
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
