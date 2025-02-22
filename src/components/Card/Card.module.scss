@@ -43,11 +43,21 @@
 .info {
  padding: 12px;
 }
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.favoriteButton {
+ width: 40px;
+ height: 40px;
 
+}
 .title {
  font-size: 18px;
  font-weight: bold;
  margin-top: 6px;
+ text-align: left;
  color: #222;
 }
 

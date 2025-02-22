@@ -12,7 +12,7 @@ const NotFound = () => {
                     <p>Страница, которую вы запрашиваете, не существует.</p>
                 </div>
 
-                <Link to="/WebToolLinks" className={s.backButton}>Вернуться на главную</Link>
+                <Link to="/" className={s.backButton}>Вернуться на главную</Link>
             </div>
         </div>
     );

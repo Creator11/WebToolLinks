@@ -16,7 +16,6 @@ const ThemeToggle = () => {
         <div className={s.themeToggle}>
             <Toggle onClick={toggleTheme}>
                 {theme === "light" ? <Sun size={20} className={s.icon} /> : <Moon size={20} className={s.icon} />}
-
             </Toggle>
         </div>
     );

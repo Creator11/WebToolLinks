@@ -1,11 +1,24 @@
 import { useState } from 'preact/hooks';
 import s from './auth.module.scss';
 import {Link} from "wouter";
+import Button from "../../components/ui/Button/Button.tsx";
+import {supabase} from "../../services/supabase/supabase.ts";
 
 const Auth = () => {
     const [isSignIn, setIsSignIn] = useState(true);  // Стейт для переключения между входом и регистрацией
     const toggleForm = () => setIsSignIn(!isSignIn);  // Переключение формы
+    const handleLogin = async () => {
+        const { error } = await supabase.auth.signInWithOAuth({
+            provider: "github",
+            options: {
+                redirectTo: window.location.origin, // Перенаправление после входа
+            },
+        });
 
+        if (error) {
+            console.error("Ошибка входа:", error.message);
+        }
+    };
     return (
         <div className={s.auth}>
             <div className={s.formWrapper}>
@@ -38,7 +51,10 @@ const Auth = () => {
                     <button onClick={toggleForm} className={s.toggleButton}>
                         {isSignIn ? 'Register' : 'Sign In'}
                     </button>
+
+
                 </div>
+                <Button onClick={handleLogin}>github</Button>
             </div>
         </div>
     );

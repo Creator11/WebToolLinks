@@ -10,9 +10,9 @@ const queryClient = new QueryClient();
 export function App() {
     return (
         <QueryClientProvider client={queryClient}>
-            <Navbar />
             <ReactQueryDevtools initialIsOpen={false} />
             <Router base="/WebToolLinks">
+                <Navbar />
                 <Routes />
             </Router>
         </QueryClientProvider>

@@ -1,125 +1,96 @@
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  //padding: 10px 20px;
-  position: relative;
-  z-index: 10;
+  padding: 10px 20px;
+  //background-color: #1976d2;
+  color: white;
 }
 
-.logoContainer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: space-between;
-}
-
-.logo {
-  height: 40px;
-}
-
-.title {
+.logoContainer .title {
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
   text-decoration: none;
-  &:hover {
-    color: white;
-  }
 }
-.authLink {
-display: flex;
-  align-items: center;
-  width: 60px;
-  padding: 0px 10px;
-}
-.controls {
+
+.rightSection {
   display: flex;
   align-items: center;
-  gap: 10px;
-
-  @media (max-width: 768px) {
-    // Скрываем элементы на мобильных устройствах по умолчанию
-    position: absolute;
-    top: -30px;
-    left: -20px;
-    width: 100vw;
-    height: 200px;
-    background-color: #1f1f1f;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    flex-direction: column;
-    gap: 15px;
-
-    transform: translateY(-300%);
-    transition: transform 0.3s ease-in-out;
-
-  }
-
-  &.showMenu {
-    transform: translateY(0); // Меню появляется плавно
-  }
 }
 
-.menuButton {
-  display: none;
-  font-size: 30px;
+.authLink {
+  border: 1px solid #b0b0b0;
+  color: #b0b0b0;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.authLink:hover {
+  color: white;
+  border-color: white;
+}
+
+.userMenu {
+  position: relative;
+  display: flex;
+}
+
+.userButton {
   background: none;
   border: none;
-  color: white;
-  cursor: pointer;
-  padding: 0;
-  z-index: 10;
-  @media (max-width: 768px) {
-    display: block; // Показываем кнопку на мобильных экранах
-  }
-}
-
-.desktopControls {
-  display: flex;
-  gap: 10px;
-
-  @media (max-width: 768px) {
-    display: none; // Скрываем на мобильных экранах
-  }
-}
-
-.githubContainer {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-.githubBadge {
+  color: #b0b0b0;
   display: flex;
   align-items: center;
-  background-color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.userButton:hover {
   color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  right: 22px;
+  top:35px;
+  background: #1f1f1f;
+  color: white;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
   text-decoration: none;
-  transition: background 0.3s;
-  max-width: 80px;
+  color: #b0b0b0;
+  border-radius: 4px;
+  transition: all 0.3s;
+  background: initial;
 }
 
-.githubBadge:hover {
-  background-color: #24292e;
-
+.menuItem:hover {
+   color: white;
 }
 
-.githubIcon {
-  margin-right: 5px;
+.divider {
+  height: 1px;
+  background: #ddd;
+  margin: 8px 0;
 }
 
-@media (max-width: 768px) {
-  .controls.showMenu {
-    transform: translateY(0); // Плавно открывается
-  }
-
-  .desktopControls {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    text-align: center;
-  }
+.menuFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
 }
