@@ -18,7 +18,9 @@ const Filter = ({ onChange }: { onChange: (value: string) => void }) => {
 
     return (
         <div className={s.filterContainer}>
+            <label  htmlFor="selectSort">Сортировка:</label>
             <select
+                id="selectSort"
                 className={s.select}
                 value={selected}
                 onChange={handleChange}

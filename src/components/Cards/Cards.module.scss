@@ -1,10 +1,11 @@
 .cardsPage {
    width: 100%;
+}
+.cardsBookmarks {
   margin-top: 118px;
 }
 .cardsWrapper {
   display: flex;
-  justify-content: center;
   align-items: start;
   width: 100%;
   min-height: 800px;
@@ -18,7 +19,6 @@
   max-width: 1200px;
   min-height: 800px;
 }
-
 .filters {
   display: flex;
   gap: 20px;
@@ -27,7 +27,6 @@
   justify-content: start;
   margin-bottom: 20px;
 }
-
 
 .empty {
   text-align: center;

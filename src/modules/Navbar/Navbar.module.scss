@@ -3,21 +3,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  //background-color: #1976d2;
+  padding: 10px 0;
   color: white;
   position: fixed;
   top: 0;
   width: 100%;
   max-width: 1200px;
 
-}
-
-.logoContainer .title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
 }
 
 .rightSection {
@@ -32,70 +24,4 @@
   border-radius: 4px;
   text-decoration: none;
   transition: all 0.3s;
-}
-
-.authLink:hover {
-  color: white;
-  border-color: white;
-}
-
-.userMenu {
-  position: relative;
-  display: flex;
-}
-
-.userButton {
-  background: none;
-  border: none;
-  color: #b0b0b0;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.userButton:hover {
-  color: white;
-}
-
-.dropdownMenu {
-  position: absolute;
-  right: 22px;
-  top:35px;
-  background: #1f1f1f;
-  color: white;
-  z-index: 1;
-  border-radius: 4px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  min-width: 160px;
-  display: flex;
-  flex-direction: column;
-}
-
-.menuItem {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px;
-  text-decoration: none;
-  color: #b0b0b0;
-  border-radius: 4px;
-  transition: all 0.3s;
-  background: initial;
-}
-
-.menuItem:hover {
-   color: white;
-}
-
-.divider {
-  height: 1px;
-  background: #ddd;
-  margin: 8px 0;
-}
-
-.menuFooter {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px;
 }

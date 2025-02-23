@@ -38,7 +38,11 @@
   text-align: center;
   margin-bottom: 24px;
 }
-
+.socialAuth {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: start;
+}
 h2 {
   font-size: 26px;
   font-weight: 500;
@@ -50,52 +54,6 @@ p {
 }
 
 
-.form {
-  display: flex;
-  flex-direction: column;
-}
-
-.inputGroup {
-  margin-bottom: 16px;
-}
-
-label {
-  font-size: 14px;
-  color: #b0b0b0;
-}
-
-input {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  border: 1px solid #333;
-  border-radius: 6px;
-  font-size: 14px;
-  background-color: #2a2a2a;
-  color: white;
-}
-
-input:focus {
-  border-color: #0077ff;
-  outline: none;
-  background-color: #333;
-}
-
-.submitButton {
-  padding: 12px;
-  background-color: #0077ff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-.submitButton:hover {
-  background-color: #005bb5;
-}
 
 .homeLink {
   display: flex;

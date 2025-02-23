@@ -1,9 +1,13 @@
 .filterContainer {
   min-width: 200px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  flex-direction: column;
 }
-
+label {
+  display: flex;
+  margin-bottom: 8px;
+}
 .select {
   width: 100%;
   padding: 10px;

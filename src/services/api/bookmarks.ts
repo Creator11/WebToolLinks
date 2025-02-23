@@ -2,17 +2,17 @@ import { supabase } from "../supabase/supabase.ts";
 
 export const getUserBookmarks = async (userId: string) => {
     const { data, error } = await supabase
-        .from("profile")  // Таблица называется profile
-        .select("card_id") // Получаем только массив card_id
-        .eq("user_id", userId)  // Фильтруем по user_id
-        .maybeSingle();  // Используем maybeSingle, чтобы избежать ошибки на пустой результат
+        .from("profile")
+        .select("card_id")
+        .eq("user_id", userId)
+        .maybeSingle();
     console.log("getUserBookmarks",data);
     if (error) {
         console.error("Ошибка загрузки bookmarks:", error);
         return [];
     }
 
-    return data?.card_id || [];  // Возвращаем массив card_id или пустой массив
+    return data?.card_id || [];
 
 };
 

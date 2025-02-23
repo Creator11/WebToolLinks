@@ -3,25 +3,9 @@ import Card from "./Card/Card.tsx";
 import Pagination from "../ui/Pagination/Pagination.tsx";
 import { useState } from "preact/hooks";
 import Filter from "../ui/Filter/Filter.tsx";
+import {CardsProps} from "../../types/card.ts";
 
 const ITEMS_PER_PAGE = 6;
-
-interface CardProps {
-    id: string;
-    created_at: string;
-    image: string;
-    tags: string[];
-    title: string;
-    description: string;
-    url: string;
-    link: string; // добавляем link
-    isBookmarked: boolean; // добавляем isBookmarked
-}
-
-interface CardsProps {
-    arr: CardProps[];
-    bookmarks?: boolean;
-}
 
 const Cards = ({ arr, bookmarks = false }: CardsProps) => {
     const [currentPage, setCurrentPage] = useState<number>(1);
@@ -37,7 +21,7 @@ const Cards = ({ arr, bookmarks = false }: CardsProps) => {
     const paginatedCards = sortedCards.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
     return (
-        <div className={s.cardsPage}>
+        <div className={`${s.cardsPage} ${bookmarks && s.cardsBookmarks }`}>
             <div className={s.filters}>
                 <Filter onChange={(value: string) => setSortOrder(value as "new" | "old")} />
             </div>
@@ -48,15 +32,10 @@ const Cards = ({ arr, bookmarks = false }: CardsProps) => {
                             <Card {...card} key={card.id} id={Number(card.id)} />
                         ))}
                     </div>
-                ) : bookmarks ? (
-                    <div>
-                        <h2>⭐ No bookmarks yet</h2>
-                        <p>Save your favorite cards to see them here.</p>
-                    </div>
                 ) : (
                     <div className={s.empty}>
-                        <h2>🧐 No cards found</h2>
-                        <p>Try adjusting your search or filters.</p>
+                        <h2>{bookmarks ? "⭐ No bookmarks yet" : "🧐 No cards found"}</h2>
+                        <p>{bookmarks ? "Save your favorite cards to see them here." : "Try adjusting your search or filters."}</p>
                     </div>
                 )}
             </div>
